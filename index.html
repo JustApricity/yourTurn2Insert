@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grocery List</title>
+</head>
+<body>
+<div class="content">
+<h1>Input:</h1>
+    <div class="list">
+     <label for="grocery">Grocery here:</label>
+    <input id="grocery" name="grocery" type="text">
+    <button type="button">Add</button>
+    </div>
+    <div class="mylist">
+        <h4></h4>
+    </div>
+</div>
+</body>
+<script>
+const grocery = document.getElementById("grocery")
+const button = document.querySelector("button")
+const mylist = document.querySelector(".mylist")
+button.addEventListener('click', function(e){
+    const add = document.createElement('h4')
+    let addTo = grocery.value
+    add.inneHTML =  `${addTo}`
+    mylist.insertAdjacentElement('afterbegin', add)
+})
+</script>
+</html>
